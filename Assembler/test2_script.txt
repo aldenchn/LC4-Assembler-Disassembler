@@ -1,0 +1,26 @@
+#########################################################
+#  file name   : test2_script.txt                       #
+#  author      : Zheyi Chen
+#  description : PennSim script file to automate        #
+#                assembling, loading, reset, and PC set #
+#########################################################
+
+##### test add_immediate and ignore comments#####
+# clear the PennSim screen
+clear
+
+# reset PennSim Simulator (clears all memory/regs)
+reset
+
+# assemble factorial.asm file into factorial.obj file
+as test2 test2
+
+# load factorial.obj into program memory
+ld test2
+
+# set Program Counter register to 0, 
+# enabling us to fetch instruction at line 0 in program memory
+set PC 0
+
+# set END label as break, once the PC = END, it will stop the LC4
+# break set END
